@@ -6,11 +6,15 @@ public class ModifierServiceFactory {
     protected ModifierServiceFactory() {
     }
     
-    public ModifierServiceFactory(ModifierService factory) {
-        instance = factory;
+    public ModifierServiceFactory(ModifierService singleton) {
+        instance = singleton;
     }
     
     static public ModifierService getInstance() {
         return instance;
+    }
+    
+    public void setModifierService(ModifierService singleton) {
+        instance = singleton;
     }
 }

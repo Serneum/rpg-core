@@ -1,15 +1,27 @@
 package com.sern.rpg.core.character;
 
+import java.util.Set;
+
 import com.sern.rpg.core.character.modifier.Modifier;
 
 public interface Character {
 
-    public abstract void setName(String name);
+    public void setName(String name);
 
-    public abstract String getName();
+    public String getName();
 
-    public abstract void setModifier(Modifier modifier);
+    public void addModifier(Modifier modifier);
 
-    public abstract Modifier getModifier();
+    public Set<Modifier> getModifiers();
+    
+    public void setHealth(int health);
+    
+    public int getHealth();
+    
+    public void adjustHealth(int amount);
+    
+    public void setBonus(int bonus);
+    
+    public int getBonus();
 
 }

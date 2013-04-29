@@ -10,11 +10,11 @@ public abstract class ModifierService {
     
     abstract public void loadAllModifiers();
     
-    public Modifier getModifier(String name) {
+    public Map<String, Modifier> getModifiers() {
         if (modifiers.isEmpty()) {
             loadAllModifiers();
         }
-        return modifiers.get(name);
+        return modifiers;
     }
     
     public boolean addModifier(String name, Modifier modifier) {

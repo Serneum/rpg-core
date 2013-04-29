@@ -4,8 +4,8 @@ import com.sern.rpg.core.character.CharacterImpl;
 
 public class Player extends CharacterImpl {
 
-    public Player(String name) {
-        super(name);
+    public Player(String name, int health) {
+        super(name, health);
     }
 
 }

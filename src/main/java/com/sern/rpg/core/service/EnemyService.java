@@ -10,11 +10,11 @@ public abstract class EnemyService {
     
     abstract public void loadAllEnemies();
     
-    public Enemy getEnemy(String name) {
+    public Map<String, Enemy> getEnemies() {
         if (enemies.isEmpty()) {
             loadAllEnemies();
         }
-        return enemies.get(name);
+        return enemies;
     }
     
     public boolean addEnemy(String name, Enemy enemy) {

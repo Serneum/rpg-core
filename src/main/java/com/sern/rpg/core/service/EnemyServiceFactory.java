@@ -6,11 +6,15 @@ public class EnemyServiceFactory {
     protected EnemyServiceFactory() {
     }
     
-    public EnemyServiceFactory(EnemyService factory) {
-        instance = factory;
+    public EnemyServiceFactory(EnemyService singleton) {
+        instance = singleton;
     }
     
     static public EnemyService getInstance() {
         return instance;
+    }
+    
+    public void setEnemyService(EnemyService singleton) {
+        instance = singleton;
     }
 }

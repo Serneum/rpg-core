@@ -1,18 +1,18 @@
 package com.sern.rpg.core.character;
 
+import java.util.Set;
+
 import com.sern.rpg.core.character.modifier.Modifier;
 
 public class CharacterImpl implements Character {
     private String name;
-    private Modifier modifier;
+    private int health = 0;
+    private int bonus = 0;
+    private Set<Modifier> modifiers;
     
-    public CharacterImpl(String name) {
-        this.name = name;
-    }
-    
-    public CharacterImpl(String name, Modifier modifier) {
-        this.name = name;
-        this.modifier = modifier;
+    public CharacterImpl(String name, int health) {
+        setName(name);
+        setHealth(health);
     }
     
     @Override
@@ -26,12 +26,36 @@ public class CharacterImpl implements Character {
     }
     
     @Override
-    public void setModifier(Modifier modifier) {
-        this.modifier = modifier;
+    public void addModifier(Modifier modifier) {
+        modifiers.add(modifier);
     }
     
     @Override
-    public Modifier getModifier() {
-        return modifier;
+    public Set<Modifier> getModifiers() {
+        return modifiers;
+    }
+    
+    @Override
+    public void setHealth(int health) {
+        this.health = health;
+    }
+    
+    @Override
+    public int getHealth() {
+        return health;
+    }
+    
+    @Override
+    public void adjustHealth(int amount) {
+        health += amount;
+    }
+
+    @Override
+    public void setBonus(int bonus) {
+    }
+
+    @Override
+    public int getBonus() {
+        return bonus;
     }
 }
