@@ -3,6 +3,7 @@ package com.sern.rpg.core.character;
 import java.util.Set;
 
 import com.sern.rpg.core.character.modifier.Modifier;
+import com.sern.rpg.core.character.special.Special;
 
 public interface Character {
 
@@ -23,5 +24,11 @@ public interface Character {
     public void setBonus(int bonus);
     
     public int getBonus();
+    
+    public void setSpecial(Special special);
+    
+    public Special getSpecial();
+    
+    public boolean hasSpecial();
 
 }

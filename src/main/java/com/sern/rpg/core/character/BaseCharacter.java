@@ -3,14 +3,16 @@ package com.sern.rpg.core.character;
 import java.util.Set;
 
 import com.sern.rpg.core.character.modifier.Modifier;
+import com.sern.rpg.core.character.special.Special;
 
-public class CharacterImpl implements Character {
+public class BaseCharacter implements Character {
     private String name;
     private int health = 0;
     private int bonus = 0;
     private Set<Modifier> modifiers;
+    private Special special;
     
-    public CharacterImpl(String name, int health) {
+    public BaseCharacter(String name, int health) {
         setName(name);
         setHealth(health);
     }
@@ -52,10 +54,26 @@ public class CharacterImpl implements Character {
 
     @Override
     public void setBonus(int bonus) {
+        this.bonus = bonus;
     }
 
     @Override
     public int getBonus() {
         return bonus;
+    }
+
+    @Override
+    public void setSpecial(Special special) {
+        this.special = special;
+    }
+
+    @Override
+    public Special getSpecial() {
+        return special;
+    }
+
+    @Override
+    public boolean hasSpecial() {
+        return special == null;
     }
 }
