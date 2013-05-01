@@ -4,8 +4,8 @@ import com.sern.rpg.core.character.Character;
 
 public abstract class Enemy extends Character {
 
-    public Enemy(String name, int health) {
-        super(name, health);
+    public Enemy(int level, String name, int health) {
+        super(level, name, health);
     }
     
 }

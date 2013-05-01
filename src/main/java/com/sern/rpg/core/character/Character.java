@@ -7,13 +7,14 @@ import com.sern.rpg.core.character.special.Special;
 
 public class Character {
     private String name;
+    protected int level = 0;
     private int maxHealth = 0;
     private int currentHealth = 0;
     private int bonus = 0;
     private Set<Modifier> modifiers;
     private Special special;
     
-    public Character(String name, int health) {
+    public Character(int level, String name, int health) {
         setName(name);
         setMaxHealth(health);
         this.currentHealth = health;
@@ -94,4 +95,13 @@ public class Character {
     public boolean hasSpecial() {
         return special != null;
     }
+    
+    protected void setLevel(int level) {
+        this.level = level;
+    }
+    
+    public int getLevel() {
+        return level;
+    }
+    
 }
