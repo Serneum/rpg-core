@@ -74,6 +74,6 @@ public class BaseCharacter implements Character {
 
     @Override
     public boolean hasSpecial() {
-        return special == null;
+        return special != null;
     }
 }
